@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "253809c9ee9eb852f32f46808bd018a7c2e72393a8d911e48bedbaa87a85d527"
+build_start_time: [1682518567, 466764000]
+build_end_time: [1682518567, 525989000]
+inputs:
+  "/Users/hong/Desktop/RainbirdGeo/app_source/toonflix/macos/Flutter/GeneratedPluginRegistrant.swift": !private [1682518554, 869352482]
+  "/Users/hong/Desktop/RainbirdGeo/app_source/toonflix/macos/Runner/AppDelegate.swift": !private [1681949587, 0]
+  "/Users/hong/Desktop/RainbirdGeo/app_source/toonflix/macos/Runner/MainFlutterWindow.swift": !private [1681949587, 0]
