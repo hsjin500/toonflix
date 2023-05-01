@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:toonflix/widgets/Button.dart';
+import 'package:toonflix/widgets/currency_card.dart';
 
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
@@ -11,9 +13,10 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: const Color(0xFF181818),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+        backgroundColor: const Color(0xFF181818),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -46,7 +49,7 @@ class App extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 120,
+                  height: 70,
                 ),
                 Text(
                   'Total Balance',
@@ -69,45 +72,73 @@ class App extends StatelessWidget {
                   height: 20,
                 ),
                 Row(
-                  children: [
-                    Container(
-                        decoration: BoxDecoration(
-                          color: Colors.amber,
-                          borderRadius: BorderRadius.circular(35),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 23,
-                            horizontal: 50,
-                          ),
-                          child: Text(
-                            'Transfer',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                        )),
-                    Container(
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 33, 30, 30),
-                          borderRadius: BorderRadius.circular(35),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 23,
-                            horizontal: 50,
-                          ),
-                          child: Text(
-                            'Transfer',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                            ),
-                          ),
-                        ))
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Button(
+                        text: 'Transfer',
+                        bgColor: Colors.amber,
+                        textColor: Colors.black),
+                    Button(
+                        text: 'Request',
+                        bgColor: Color.fromARGB(255, 52, 47, 47),
+                        textColor: Colors.white),
                   ],
+                ),
+                const SizedBox(
+                  height: 100,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Wallets',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      'View All',
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.8),
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const CurrencyCard(
+                  name: 'Euro',
+                  code: 'EUR',
+                  amount: '6 428',
+                  icon: Icons.euro_rounded,
+                  isInverted: false,
+                  order: 0,
+                ),
+                const CurrencyCard(
+                  name: 'Bitcoin',
+                  code: 'BTC',
+                  amount: '9 785',
+                  icon: Icons.currency_bitcoin_rounded,
+                  isInverted: true,
+                  order: 2,
+                ),
+                const CurrencyCard(
+                  name: 'Dollor',
+                  code: 'USD',
+                  amount: '428',
+                  icon: Icons.attach_money_outlined,
+                  isInverted: false,
+                  order: 4,
                 ),
               ],
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
